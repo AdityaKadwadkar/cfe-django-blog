@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: cfe-django-blog
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn cfeblog.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: DATABASE_URL
+        value: sqlite:///db.sqlite3
