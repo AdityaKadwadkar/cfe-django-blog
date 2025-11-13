@@ -101,7 +101,9 @@ USE_TZ = True
 # === STATIC / MEDIA ===
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticroot"
-STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+
+# Remove STATICFILES_DIRS because project does not use it
+# STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 
 # Whitenoise compression
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
